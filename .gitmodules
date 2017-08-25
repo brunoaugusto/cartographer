@@ -1,0 +1,3 @@
+[submodule "Libraries/vendor/next"]
+	path = Libraries/vendor/next
+	url = git@github.com:nextframework/next.git
