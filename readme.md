@@ -26,7 +26,7 @@ Data Providers analyze different sources build the Sitemap Node's Composite, a n
 
 Currently there are 3 Data providers available:
 
-#### <a href="/tree/master/Libraries/Cartographer/Providers/Video/Standard.php">Cartographer\Providers\Provider\Standard</a>
+#### [Cartographer\Providers\Provider\Standard][13]
 
  Data is retrieved from valid Sitemap Tags in a PHP array.<br />
  The Standard Provider requires a Parameter Option `data` with the data-source to be analyzed.
@@ -141,7 +141,7 @@ Currently there are 3 Data providers available:
 
  > In order to be considered as valid an entry **must** have at least a `Title`, a `Description`, a `Thumbnail` and a `Content Location` -OR a `Player Location`
 
-#### <a href="/tree/master/Libraries/Cartographer/Providers/Video/YouTube.php">Cartographer\Providers\Provider\YouTube</a>
+#### [Cartographer\Providers\Provider\YouTube][14]
 
  Data is retrieved by consuming the YouTube Video API<br />
  The YouTube Provider requires a Parameter Option `urls` with YouTube URLs for the API to work with and a `key` with a [Google Developers Credential][8]. E.g:
@@ -175,7 +175,7 @@ The most basic informations are available by requesting the `snippet` Part, whic
    By default, a float value of `0.95`, meaning a chance of 95% of the Video being liked<br />
    This value is also configurable through YouTube Provider and **must** be a positive float value lower than 1 (i.e. 100%)
 
-#### <a href="/tree/master/Libraries/Cartographer/Providers/Video/Meta.php">Cartographer\Providers\Provider\Meta</a>
+#### [Cartographer\Providers\Provider\Meta][15]
 
  Data is retrieved from *some* of [VideoObject][3] Meta Tags from any valid URL listed under the Parameter Option `urls`<br />
  Currently the following Meta Tags are recognized:
@@ -221,7 +221,7 @@ Because of this the Meta Provider accepts an additional Parameter Option named `
 
 ### ▸ Drawing Pens
 
-#### <a href="/tree/master/Libraries/Cartographer/Drawing/Pens/XML.php">Cartographer\Drawing\Pens\XML</a>
+#### [Cartographer\Drawing\Pens\XML][16]
 
  The currently only Drawing Pen available, very suggestively, will provide a way for the Sitemap Nodes' Composite to be rendered as a XML structure.
 
@@ -229,11 +229,11 @@ Because of this the Meta Provider accepts an additional Parameter Option named `
 
  And, last but not least, two `Cartographer\Drawing\Papers\Paper` Objects:
 
-#### <a href="/tree/master/Libraries/Cartographer/Drawing/Papers/Response.php">Cartographer\Drawing\Papers\Response</a>
+#### [Cartographer\Drawing\Papers\Response][17]
 
 The Response Paper Object outputs the content directly to the Browser with the proper HTTP Header Fields (if possible)
 
-#### <a href="/tree/master/Libraries/Cartographer/Drawing/Papers/File.php">Cartographer\Drawing\Papers\File</a>
+#### [Cartographer\Drawing\Papers\File][18]
 
 The File Paper Object writes down the content to a file<br />
 It requires a Parameter Option `destination` with a valid directory where the file will be created and accepts an optional Parameter `filename` if the filename needs to be changed
@@ -292,3 +292,9 @@ If you don't know what this means, [here you go][12]
 [10]: evanmiller.org/how-not-to-sort-by-average-rating.html
 [11]: http://www.gnu.org/licenses/agpl-3.0.txt
 [12]: https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)
+[13]: https://github.com/brunoaugusto/cartographer/tree/master/Libraries/Cartographer/Providers/Video/Standard.php
+[14]: https://github.com/brunoaugusto/cartographer/tree/master/Libraries/Cartographer/Providers/Video/YouTube.php
+[15]: https://github.com/brunoaugusto/cartographer/tree/master/Libraries/Cartographer/Providers/Video/Meta.php
+[16]: https://github.com/brunoaugusto/cartographer/tree/master/Libraries/Cartographer/Drawing/Pens/XML.php
+[17]: https://github.com/brunoaugusto/cartographer/tree/master/Libraries/Cartographer/Drawing/Papers/Response.php
+[18]: https://github.com/brunoaugusto/cartographer/tree/master/Libraries/Cartographer/Drawing/Papers/File.php
