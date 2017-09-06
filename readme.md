@@ -22,7 +22,7 @@ The Cartographer detects patterns in an environment described by a `Cartographer
 
 ### ▸ Data Providers
 
-Data Providers analyze different sources build the Sitemap Node's Composite, a nested Collection of `Cartographer\Drawing\Nodes\Node`, which will be hierarchically rendered with the `Cartographer\Drawing\Pens\Pen` provided.
+Data Providers analyze different sources and build the Sitemap Node's Composite, a nested Collection of `Cartographer\Drawing\Nodes\Node`, which will be hierarchically rendered with the `Cartographer\Drawing\Pens\Pen` provided.
 
 Currently there are 3 Data providers available:
 
@@ -94,7 +94,7 @@ Currently there are 3 Data providers available:
    The number of views the Video has
    - `price` *(array)*<br />
    An associative array describing the price to view/download the Video.<br />
-   The following Parameter Options are available:
+   Accepted values for its inner Parameter Options are:
      - `price` (string)<br />
      The price itself (required)
      - `currency` (string)<br />
@@ -127,7 +127,7 @@ Currently there are 3 Data providers available:
    - `countryRestriction` *(array)*<br />
    An associative array with its key describing the *Relationship Rule* (`alow` or `deny`) and an array or a comma-separated list of [ISO 3166][7] Country Codes as value.<br />
 
-     > Note: Only the first *Relationship* defined will be taken into account!
+     > Only the first *Relationship* defined will be taken into account!
 
    - `requiresSubscription` *(string)*<br />
    Describes if the Video requires an either paid or free subscription to be played/downloaded.<br />
@@ -169,15 +169,15 @@ The most basic informations are available by requesting the `snippet` Part, whic
 
    - The `statistics` Part currently provides **Views Counter** and **Video Rating** and has an additional Quota Cost of **2**
 
-   If the `statistics` Part is provided, because YouTube doesn't provide a straight to he point rating (0 to 5.0) we'll compute one based on the Total Number of Votes, Likes and Dislikes using [Wilson Score Confidence Interval for a Bernoulli Parameter][10]<br />
+   If the `statistics` Part is provided, because YouTube doesn't provide a straight to the point rating (0 to 5.0) we'll compute one based on the Total Number of Votes, Likes and Dislikes using [Wilson Score Confidence Interval for a Bernoulli Parameter][10]<br />
 
    This algorithm accepts a Parameter Option `confidence` which, for the purpose of a Video, means the statistical probability of the Video being liked<br />
-   By default, a float value of `0.95`, meaning a chance of 95% of the Video being liked<br />
+   By default, a float value of `0.95` is set, meaning a chance of 95% of the Video being liked<br />
    This value is also configurable through YouTube Provider and **must** be a positive float value lower than 1 (i.e. 100%)
 
 #### [Cartographer\Providers\Provider\Meta][15]
 
- Data is retrieved from *some* of [VideoObject][3] Meta Tags from any valid URL listed under the Parameter Option `urls`<br />
+ Data is retrieved from *some* of [VideoObject][3] Meta Tags from any valid URL defined under the required Parameter Option `urls`<br />
  Currently the following Meta Tags are recognized:
 
    - `name` *(string)*<br />
@@ -215,7 +215,7 @@ The most basic informations are available by requesting the `snippet` Part, whic
    A list of tags describing the Video.<br />
    It can be a an array of tags or a comma-separated string
 
-Depending on the platform used to publish the Video, sometimes the **Publishing Date** won't be available.<br />
+Depending on the platform the resulting sitemap will be used to publish the Video, sometimes the **Publishing Date** may not be available.<br />
 
 Because of this the Meta Provider accepts an additional Parameter Option named `uploadDateIsPublishingDate` that allows the Upload Date, if available, to be used as Publishing Date
 
@@ -223,7 +223,7 @@ Because of this the Meta Provider accepts an additional Parameter Option named `
 
 #### [Cartographer\Drawing\Pens\XML][16]
 
- The currently only Drawing Pen available, very suggestively, will provide a way for the Sitemap Nodes' Composite to be rendered as a XML structure.
+ There's currently only Drawing Pen available that, very suggestively, provides a way for the Sitemap Nodes' Composite to be rendered as a XML structure.
 
 ### ▸ Drawing Papers
 
